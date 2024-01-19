@@ -636,7 +636,7 @@ section:nth-child(even) .animate.scroll,
 }
 
 /* Social Media Icons Animation */
-.bxl-facebook, .bxl-github, .bxl-twitter, .bxl-instagram, .bxs-phone, .bxl-telegram {
+.bxl-facebook, .bxl-github, .bxl-linkedin, .bxl-twitter, .bxl-instagram, .bxs-phone, .bxl-telegram {
     animation: social-icon-animation 1.5s infinite;
 }
 
