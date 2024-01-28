@@ -1,4 +1,3 @@
-
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
@@ -30,6 +29,12 @@ window.onscroll = () => {
         else{
             sec.classList.remove('show-animate');
         }
+    });
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+  
+    darkModeToggle.addEventListener('change', () => {
+      body.classList.toggle('dark-mode', darkModeToggle.checked);
     });
 
     // Sticky header

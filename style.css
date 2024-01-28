@@ -14,6 +14,8 @@
     --second-bg-color: #112e42;
     --text-color: #ededed;
     --main-color: #00abf0;
+    --dark-bg-color: #121212;
+    --dark-text-color: #ffffff;
 }
 html{
     font-size: 62.5%;
@@ -23,6 +25,11 @@ body{
     background-color: var(--bg-color);
     color: var(--text-color);
 }
+body.dark-mode {
+    background-color: #333;
+    color: #fff
+}
+
     .header {
         position: fixed;
         top: 0;
@@ -85,6 +92,24 @@ section{
     padding: 0 9%;
     background: var(--second-bg-color);
 }
+#dark-mode-toggle,
+#menu-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Adjust the space between the dark mode icons */
+#dark-mode-toggle + label {
+  margin-left: 10px;
+}
+
+/* Adjust the space between the dark mode icon and the menu icon */
+#dark-mode-toggle + label,
+#dark-mode-toggle + label + #menu-icon {
+  margin-right: 10px;
+}
+  
 #home-photo{
     width: 100%;
     position: relative;
@@ -609,7 +634,9 @@ section:nth-child(odd) .animate,
 .header .animate{
     background: var(--bg-color);
 }
-
+section:nth-child(even) .animate.scroll {
+    background: var(--bg-color);
+}
 section:nth-child(even) .animate.scroll {
     background: var(--second-bg-color);
 }
@@ -619,14 +646,11 @@ section:nth-child(even) .animate.scroll,
 }
 
 .about.show-animate .animate.scroll,
+.skills.show-animate .animate.scroll,
 .education.show-animate .animate.scroll,
 .contact.show-animate .animate.scroll,
-.footer.show-animate .animate.scroll, 
-.skills h3.show-animate .animate.scroll, 
-.skills.ul.show-animate .animate.scroll, 
-.work h3.show-animate .animate.scroll, 
-.work .work-item.show-animate .animate.scroll{
-    transition-delay: calc(.3s * var(--i));
+.footer.show-animate .animate.scroll {
+     transition-delay: calc(.3s * var(--i));
     width: 0;
 }
 @keyframes envelope-animation {
@@ -645,6 +669,22 @@ section:nth-child(even) .animate.scroll,
     50% { transform: scale(1.2); }
     100% { transform: scale(1); }
 }
+@media screen and (max-width: 768px) {
+    /* Adjust styling for smaller screens */
+    #dark-mode-toggle,
+    #menu-icon {
+      position: relative;
+      top: auto;
+      right: auto;
+      margin-top: 10px; /* Adjust as needed */
+      margin-right: 0; /* Reset right margin */
+    }
+  
+    /* Reset the space between the dark mode icons for smaller screens */
+    #dark-mode-toggle + label {
+      margin-left: 0;
+    }
+  }
 @media (max-width: 1200px){
     html{
         font-size: 55%;
